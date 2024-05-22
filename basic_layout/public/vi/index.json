@@ -1,0 +1,57 @@
+[
+{
+	"uri": "//localhost:1313/vi/1-preparation/",
+	"title": "Chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Trước khi thực hiện nội dung chính của workshop này, chúng ta cần thiết lập lại ứng dụng web bằng AWS SAM.\nTải source code dưới đây\nChạy các câu lệnh dưới đây\nsam build\rsam deploy --guided Nhập nội dung như sau:\nStack Name []: fcj-book-shop AWS Region []: ap-southeast-1 Confirm changes before deploy [Y/n]: y Allow SAM CLI IAM role creation [Y/n]: y Disable rollback [y/N]: y BooksList may not have authorization defined, Is this okay? [y/N]: y BookCreate may not have authorization defined, Is this okay? [y/N]: y BookDelete may not have authorization defined, Is this okay? [y/N]: y Login may not have authorization defined, Is this okay? [y/N]: y Register may not have authorization defined, Is this okay? [y/N]: y ConfirmUser may not have authorization defined, Is this okay? [y/N]: y Save arguments to configuration file [Y/n]: y Mở bảng điều khiển của AWS APIs Gateway\nẤn chọn API Gateway REST API to Lambda Ấn chọn Stage ở menu phía bên trái\nẤn chọn staging Ghi lại InvokeURL Thực hiện câu lệnh dưới đây để tải code FCJ-Serverless-Workshop về máy của bạn\ngit clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git Mở tệp config.js, thay giá trị của APP_API_URL bằng InvokeURL Thực hiện các câu lệnh dưới đây để build project\ncd FCJ-Serverless-Workshop\ryarn build Chúng ta đã build xong front-end. Tiếp theo thực hiện câu lệnh sau để tải thư mục build lên S3 bucket\naws s3 cp build s3://fcj-book-shop --recursive Vậy là chúng ta đã tạo lại xong ứng dụng web.\n"
+},
+{
+	"uri": "//localhost:1313/vi/2-basic-layout/",
+	"title": "Chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Trước khi thực hiện nội dung chính của workshop này, chúng ta cần thiết lập lại ứng dụng web bằng AWS SAM.\nTải source code dưới đây\nChạy các câu lệnh dưới đây\nsam build\rsam deploy --guided Nhập nội dung như sau:\nStack Name []: fcj-book-shop AWS Region []: ap-southeast-1 Confirm changes before deploy [Y/n]: y Allow SAM CLI IAM role creation [Y/n]: y Disable rollback [y/N]: y BooksList may not have authorization defined, Is this okay? [y/N]: y BookCreate may not have authorization defined, Is this okay? [y/N]: y BookDelete may not have authorization defined, Is this okay? [y/N]: y Login may not have authorization defined, Is this okay? [y/N]: y Register may not have authorization defined, Is this okay? [y/N]: y ConfirmUser may not have authorization defined, Is this okay? [y/N]: y Save arguments to configuration file [Y/n]: y Mở bảng điều khiển của AWS APIs Gateway\nẤn chọn API Gateway REST API to Lambda Ấn chọn Stage ở menu phía bên trái\nẤn chọn staging Ghi lại InvokeURL Thực hiện câu lệnh dưới đây để tải code FCJ-Serverless-Workshop về máy của bạn\ngit clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git Mở tệp config.js, thay giá trị của APP_API_URL bằng InvokeURL Thực hiện các câu lệnh dưới đây để build project\ncd FCJ-Serverless-Workshop\ryarn build Chúng ta đã build xong front-end. Tiếp theo thực hiện câu lệnh sau để tải thư mục build lên S3 bucket\naws s3 cp build s3://fcj-book-shop --recursive Vậy là chúng ta đã tạo lại xong ứng dụng web.\n"
+},
+{
+	"uri": "//localhost:1313/vi/1-preparation/install/",
+	"title": "Install",
+	"tags": [],
+	"description": "",
+	"content": "Installs on your Laptop Before we begin, there are a few things you need to have installed on your laptop:\nGit Node.js 14.2 or higher npm 7.10 or higher Have access to your preferred IDE To learn more about the tools, you can visit the following links:\nhttps://git-scm.com https://nodejs.org https://www.npmjs.com Installs Verification If you already have one or several of these dependencies installed, just verify you have the latest version. Here are the versions we tested the workshop instructions with. Any more recent version should work as well.\ngit --version\r# git version 2.30.1 or higher\rnode --version\r# v14.21.0 or higher\rnpm --version\r# 6.14.17 or higher "
+},
+{
+	"uri": "//localhost:1313/vi/",
+	"title": "Serverless - Xử lý đơn hàng với SQS-SNS",
+	"tags": [],
+	"description": "",
+	"content": "Serverless - Xử lý đơn hàng với SQS-SNS Tổng quan Trong bài số 6 của series này, chúng ta sẽ xử lý các đơn đặt hàng của người dùng sử dụng Amazon SQS và SNS. Khi người dùng đặt hàng, đơn hàng sẽ được đẩy vào hàng đợi và SNS sẽ thông báo cho admin về đơn hàng mới đó. Admin có quyền xem tất cả các đơn đặt hàng và xử lý hoặc xoá chúng.\nKiến trúc của ứng dụng web sẽ như sau: Khi người dùng đặt hàng (ấn Checkout), API POST /books/order đưa thông tin của đơn hàng vào hàng đợi mà bạn tạo, sau đó pulish một tin nhắn qua Amazon SNS topic API GET /books/order được gọi khi admin sử dụng tính năng quản lý đơn hàng để lấy toàn bộ đơn hàng chưa xử lý trong hàng đợi và đã xử lý trong bảng của DynamoDB Khi Admin xử lý đơn hàng (ấn Handle), API POST /books/order/handle sẽ đẩy đơn hàng vào DynamoDB và xoá nó trong hàng đợi Khi Admin xoá đơn hàng (ấn Delete), API DELETE /books/order sẽ xoá đơn hàng khỏi hàng đợi Amazon Simple Queue Service Amazon Simple Queue Service cung cấp một hàng đợi an toàn, bền vững và có sẵn cho phép bạn tích hợp và tách rời các hệ thống và thành phần phần mềm phân tán. Nó có thể mở rộng quy mô độc lập với ứng dụng của chúng ta. Nó cung cấp một API dịch vụ web chung mà bạn có thể truy cập bằng bất kỳ ngôn ngữ lập trình nào mà AWS SDK hỗ trợ. Amazon SQS hỗ trợ cả hàng đợi tiêu chuẩn và FIFO.\nMột hệ thống message phân tán gồm 3 phần chính: các thành phần của hệ thống phân tán, hàng đợi của bạn (được phân phối trên máy chủ Amazon SQS) và các tin nhắn trong hàng đợi. Ví dụ: hệ thống của bạn có một số nhà sản xuất (thành phần gửi thông điệp đến hàng đợi) và người tiêu dùng (thành phần nhận thông báo từ hàng đợi). Hàng đợi (chứa các thông báo) lưu trữ các thông báo trên máy chủ Amazon SQS.\nAmazon Simple Notification Service Amazon Simple Notification Service (SNS) một dịch vụ được quản lý để cung cấp dịch vụ gửi tin nhắn từ publishers đến subscribers (còn được gọi là producers và consumers). Publishers giao tiếp không đồng bộ với subscribers bằng cách gửi tin nhắn đến một topic, đây là điểm truy cập và kênh giao tiếp logic. Khách hàng có thể đăng ký SNS topic và nhận các tin nhắn đã xuất bản bằng cách sử dụng loại điểm cuối được hỗ trợ, chẳng hạn như Amazon Kinesis Data Firehose, Amazon SQS, AWS Lambda, HTTP, email, thông báo đẩy trên thiết bị di động và tin nhắn văn bản di động (SMS).\nNội dung Chuẩn bị Tạo hàng đợi và SNS topic Tạo API và Lambda function Kiểm tra hoạt động Dọn dẹp tài nguyên "
+},
+{
+	"uri": "//localhost:1313/vi/1-preparation/setup/",
+	"title": "Setup Environment",
+	"tags": [],
+	"description": "",
+	"content": "To get started, set up the provided workshop application by following the steps:\nClone the workshop repository in your development environment: git clone https://github.com/aws-samples/cloudscape-design-system-workshop.git Change to the workshop directory: cd cloudscape-design-system-workshop Install the dependencies by running: npm install With that explained, you\u0026rsquo;re ready to proceed with the first workshop step. About the workshop repository All steps towards the final application are available as branches on the repository. If you have local changes, stash them by using git stash or force the check out by adding the -f option to the checkout command.\nStep 1: Basic layout → Starting the step: git checkout step-1. Get the completed step: git checkout - step-1-completed Step 2: Table view → Starting the step: git checkout step-2. Get the completed step: git checkout step-2-completed Step 3: Creation flow → Starting the step: git checkout step-3. Get the completed step: git checkout step-3-completed To view the final workshop application, check out the main branch. Clean up If you want to clean up the files created during the workshop, navigate to the workshop repository folder and delete it.\n"
+},
+{
+	"uri": "//localhost:1313/vi/5-cleanup/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": " Làm rỗng S3 bucket Mở bảng điều khiển của AWS S3 Chọn fcj-book-store Ấn Empty Nhập permanently delete Ấn Empty Làm tương tự với bucket bắt đầu bằng aws-sam-cli-managed-default- và bucket book-image-resize-store Xoá stack của CloudFormation Chạy câu lệnh dưới đây để xoá ứng dụng AWS SAM sam delete --stack-name fcj-book-store\rsam delete --stack-name aws-sam-cli-managed-default Xoá hàng đợi Mở bảng điều khiển của Amazon SQS Chọn hàng đợi đã tạo Ấn Delete Nhập delete Ấn Delete Xoá SNS topic Mở bảng điều khiển của Amazon SNS Chọn topic đã tạo Ấn Delete Nhập delete me Ấn Delete Ấn vào tab Subcriptions Chọn subcription đã tạo Ấn Delete Ấn Delete lần nữa "
+},
+{
+	"uri": "//localhost:1313/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

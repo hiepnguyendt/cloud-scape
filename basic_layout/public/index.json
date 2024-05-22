@@ -1,0 +1,57 @@
+[
+{
+	"uri": "//localhost:1313/",
+	"title": "Build a cloud experience with Cloudscape Design System",
+	"tags": [],
+	"description": "",
+	"content": "Build a cloud experience with Cloudscape Design System In this workshop, we will use the open source Cloudscape Design System to build a responsive and accessible web application for cloud management. The web application will leverage the open source React components offered by Cloudscape.\nWe\u0026rsquo;ll go from an empty React TypeScript project to building a basic application using Cloudscape components. You\u0026rsquo;ll be introduced to a few of our core patterns, along with the corresponding components necessary to implement these patterns. Every step in this workshop can be started independently by checking out the associated branch.\nLearning Objectives The main learning objective of this workshop is to introduce you to Cloudscape through building a web application.\nThis workshop is divided into three steps:\nIn the first step, you will learn how to create the basic structure for the webapp. It contains the top navigation and the application layout which will be used throughout the workshop. The second step is all about viewing resources. You will implement a table and enrich its functionality step by step. Finally, in the third step, you will learn about creating resources and validation. You will see how form handling works with Cloudscape by using multiple patterns. Here\u0026rsquo;s a preview showing the workshop application we\u0026rsquo;re building:\nStep 1: Basic layout Step 2: Table view Step 3: Creation flow About Cloudscape Design System Cloudscape is an open source design system to create web applications. It was built for and is used by Amazon Web Services (AWS) products and services. We created it in 2016 to improve the user experience across web applications owned by AWS services, and also to help teams implement those applications faster. Since then, we have continued enhancing the system based on customer feedback and research.\nAudience This workshop requires knowledge of frontend development. As such, you should be familiar with: React, TypeScript, Git, the JavaScript programming language, and typing commands in the Terminal.\nContent Preparation Create queue and SNS topic Create API and Lambda function Test web operation Cleanup "
+},
+{
+	"uri": "//localhost:1313/1-preparation/install/",
+	"title": "Install",
+	"tags": [],
+	"description": "",
+	"content": "Installs on your Laptop Before we begin, there are a few things you need to have installed on your laptop:\nGit Node.js 14.2 or higher npm 7.10 or higher Have access to your preferred IDE To learn more about the tools, you can visit the following links:\nhttps://git-scm.com https://nodejs.org https://www.npmjs.com Installs Verification If you already have one or several of these dependencies installed, just verify you have the latest version. Here are the versions we tested the workshop instructions with. Any more recent version should work as well.\ngit --version\r# git version 2.30.1 or higher\rnode --version\r# v14.21.0 or higher\rnpm --version\r# 6.14.17 or higher "
+},
+{
+	"uri": "//localhost:1313/1-preparation/",
+	"title": "Preparation",
+	"tags": [],
+	"description": "",
+	"content": "Before we get to the main content of this workshop, we need to reset the web application.\nDownload the below source code\nRun the below commands\nsam build\rsam deploy --guided Enter the following content:\nStack Name []: fcj-book-shop AWS Region []: ap-southeast-1 Confirm changes before deploy [Y/n]: y Allow SAM CLI IAM role creation [Y/n]: y Disable rollback [y/N]: y BooksList may not have authorization defined, Is this okay? [y/N]: y BookCreate may not have authorization defined, Is this okay? [y/N]: y BookDelete may not have authorization defined, Is this okay? [y/N]: y Login may not have authorization defined, Is this okay? [y/N]: y Register may not have authorization defined, Is this okay? [y/N]: y ConfirmUser may not have authorization defined, Is this okay? [y/N]: y Save arguments to configuration file [Y/n]: y Open AWS APIs Gateway console\n"
+},
+{
+	"uri": "//localhost:1313/2-basic-layout/",
+	"title": "Basic layout",
+	"tags": [],
+	"description": "",
+	"content": "The workshop application makes use of the top navigation pattern and the layout pattern to lay out a few of the essential components on a page. In this first assignment, you\u0026rsquo;ll start with a minimally bootstrapped application and finish with your first page using Cloudscape components.\nBefore getting started, it is always useful to familiarize yourself with the component API and design documentation. In this step, we\u0026rsquo;ll look at the following components to build a basic layout:\nTop navigation component to render the application\u0026rsquo;s header. App layout component to render the provided content. Side navigation component to render the navigation menu. Breadcrumb group component which reflects the information architecture of our application. Content to the app layout component provides the basic layout for the header and content of a page Component for dashboard added predefined content for the dashboard page Explore the top navigation component See how the app looks before and after this step:\nBefore After "
+},
+{
+	"uri": "//localhost:1313/1-preparation/setup/",
+	"title": "Setup Environment",
+	"tags": [],
+	"description": "",
+	"content": "To get started, set up the provided workshop application by following the steps:\nClone the workshop repository in your development environment: git clone https://github.com/aws-samples/cloudscape-design-system-workshop.git Change to the workshop directory: cd cloudscape-design-system-workshop Install the dependencies by running: npm install With that explained, you\u0026rsquo;re ready to proceed with the first workshop step. About the workshop repository All steps towards the final application are available as branches on the repository. If you have local changes, stash them by using git stash or force the check out by adding the -f option to the checkout command.\nStep 1: Basic layout → Starting the step: git checkout step-1. Get the completed step: git checkout - step-1-completed Step 2: Table view → Starting the step: git checkout step-2. Get the completed step: git checkout step-2-completed Step 3: Creation flow → Starting the step: git checkout step-3. Get the completed step: git checkout step-3-completed To view the final workshop application, check out the main branch. Clean up If you want to clean up the files created during the workshop, navigate to the workshop repository folder and delete it.\n"
+},
+{
+	"uri": "//localhost:1313/5-cleanup/",
+	"title": "Clean up",
+	"tags": [],
+	"description": "",
+	"content": " Empty S3 bucket Open AWS S3 console Select fcj-book-store Click Empty Enter permanently delete Click Empty Do the same for bucket starting with aws-sam-cli-managed-default- Delete CloudFormation stacks Execute the below command to delete the AWS SAM application sam delete --stack-name fcj-book-store\rsam delete --stack-name aws-sam-cli-managed-default Delete queue Open Amazon SQS console Select created queue Click Delete Enter delete Click Delete Delete SNS topic and subcription Open Amazon SNS console Select created topic Click Delete Enter delete me Click Delete Click Subcriptions tab Select created subcription Click Delete Click Delete again "
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
