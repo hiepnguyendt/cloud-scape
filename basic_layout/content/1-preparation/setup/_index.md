@@ -13,6 +13,7 @@ To get started, set up the provided workshop application by following the steps:
     git clone https://github.com/aws-samples/cloudscape-design-system-workshop.git
 
     ````
+    ![setup](/images/1.png?featherlight=false&width=50pc)
 2. Change to the workshop directory:
     ````
     cd cloudscape-design-system-workshop
@@ -21,6 +22,7 @@ To get started, set up the provided workshop application by following the steps:
     ```
     npm install
     ```
+    ![setup](/images/2.png?featherlight=false&width=50pc)
 4. With that explained, you're ready to proceed with the first workshop step.
 
 #### About the workshop repository

@@ -32,7 +32,7 @@ This workshop requires knowledge of frontend development. As such, you should be
 #### Content
 
  1. [Preparation](1-preparation/)
- 2. [Create queue and SNS topic](2-create-sqs-and-sns/)
- 3. [Create API and Lambda function](3-create-api-lambda-function/)
- 4. [Test web operation](4-test-operation/)
- 5. [Cleanup](5-cleanup)
+ 2. [Basic Layout](2-basic-layout/)
+ 3. [Table View](3-table-view/)
+ 4. [Creation Flow](4-creation-flow/)
+ 5. [Wrapping up](wrapping-up/)

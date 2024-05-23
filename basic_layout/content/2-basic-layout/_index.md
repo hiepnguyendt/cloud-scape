@@ -3,7 +3,7 @@ title : "Basic layout"
 date :  "`r Sys.Date()`" 
 weight : 2 
 chapter : false
-pre : " <b> 2. </b> "
+pre : " <b>2.</b> "
 ---
 The workshop application makes use of the [top navigation pattern](https://cloudscape.design/patterns/general/service-navigation/top-navigation/)  and the [layout pattern](https://cloudscape.design/foundation/visual-foundation/layout/)  to lay out a few of the essential components on a page. In this first assignment, you'll start with a minimally bootstrapped application and finish with your first page using Cloudscape components.
 
@@ -20,4 +20,4 @@ See how the app looks before and after this step:
 
 |  Before      |   After       |   
 | :-------------: | :-------------: |
-| ![Preparation](/images/1.png?false&width=90pc) | ![Preparation](/images/0.png?false&width=90pc) |    
+| ![Preparation](/images/3.png?false&width=90pc&height=30pc) | ![Preparation](/images/9.png?false&width=90pc&height=30pc) |   

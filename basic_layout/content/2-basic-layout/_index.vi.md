@@ -1,59 +1,23 @@
 ---
-title : "Chuẩn bị"
+title : "Basic layout"
 date :  "`r Sys.Date()`" 
-weight : 1 
+weight : 2 
 chapter : false
-pre : " <b> 1. </b> "
+pre : " <b>2</b> "
 ---
-Trước khi thực hiện nội dung chính của workshop này, chúng ta cần thiết lập lại ứng dụng web bằng AWS SAM.
-1. Tải source code dưới đây
+The workshop application makes use of the [top navigation pattern](https://cloudscape.design/patterns/general/service-navigation/top-navigation/)  and the [layout pattern](https://cloudscape.design/foundation/visual-foundation/layout/)  to lay out a few of the essential components on a page. In this first assignment, you'll start with a minimally bootstrapped application and finish with your first page using Cloudscape components.
 
+Before getting started, it is always useful to familiarize yourself with the component API and design documentation. In this step, we'll look at the following components to build a basic layout:
+1. [Top navigation](2-1-top-nav-component/) component to render the application's header.
+2. [App layout](2-2-app-layout-component/) component to render the provided content.
+3. [Side navigation](2-3-side-nav-to-app-layout/)  component to render the navigation menu.
+4. [Breadcrumb group](2-4-breadcrumb-to-app-layout/) component which reflects the information architecture of our application.
+5. [Content to the app layout](2-5-content-to-app-layout/) component provides the basic layout for the header and content of a page
+6. [Component for dashboard](2-6-explore-component-dashboard/) added predefined content for the dashboard page
+7. [Explore the top navigation component](2-7-explore-top-nav-component/) 
+   
+See how the app looks before and after this step:
 
-
-2. Chạy các câu lệnh dưới đây
-    ```
-    sam build
-    sam deploy --guided
-    ```
-
-3. Nhập nội dung như sau:
-    - Stack Name []: `fcj-book-shop`
-    - AWS Region []: `ap-southeast-1`
-    - Confirm changes before deploy [Y/n]: **y**
-    - Allow SAM CLI IAM role creation [Y/n]: **y**
-    - Disable rollback [y/N]: **y**
-    - BooksList may not have authorization defined, Is this okay? [y/N]: **y**
-    - BookCreate may not have authorization defined, Is this okay? [y/N]: **y**
-    - BookDelete may not have authorization defined, Is this okay? [y/N]: **y**
-    - Login may not have authorization defined, Is this okay? [y/N]: **y**
-    - Register may not have authorization defined, Is this okay? [y/N]: **y**
-    - ConfirmUser may not have authorization defined, Is this okay? [y/N]: **y**
-    - Save arguments to configuration file [Y/n]: **y**
-
-4. Mở bảng điều khiển của [AWS APIs Gateway](https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1)
-
-5. Ấn chọn **API Gateway REST API to Lambda**
-![Preparation](/images/1/1.png?false&width=90pc)
-
-6. Ấn chọn **Stage** ở menu phía bên trái
-    - Ấn chọn **staging**
-    - Ghi lại **InvokeURL**
-![Preparation](/images/1/2.png?false&width=90pc)
-
-
-7. Thực hiện câu lệnh dưới đây để tải code **FCJ-Serverless-Workshop** về máy của bạn
-    ```
-    git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
-    ```
-    - Mở tệp **config.js**, thay giá trị của **APP_API_URL** bằng **InvokeURL**
-8. Thực hiện các câu lệnh dưới đây để build project
-    ```
-    cd FCJ-Serverless-Workshop
-    yarn build
-    ```
-9. Chúng ta đã build xong front-end. Tiếp theo thực hiện câu lệnh sau để tải thư mục **build** lên S3 bucket
-    ```
-    aws s3 cp build s3://fcj-book-shop --recursive
-    ```
-
-***Vậy là chúng ta đã tạo lại xong ứng dụng web.***
+|  Before      |   After       |   
+| :-------------: | :-------------: |
+| ![Preparation](/images/3.png?false&width=90pc&height=30pc) | ![Preparation](/images/9.png?false&width=90pc&height=30pc) |   

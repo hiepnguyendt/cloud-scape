@@ -18,7 +18,7 @@ home = [ "HTML", "RSS", "JSON"]
   
 [Languages]
 [Languages.en]
-title = "SERVERLESS - PROCESSING ORDERS WITH SQS AND SNS"
+title = " Build a cloud experience with Cloudscape Design System"
 weight = 1
 languageName = "English"
 
@@ -35,7 +35,7 @@ url = "https://www.facebook.com/groups/awsstudygroupfcj"
 weight = 20
 
 [Languages.vi]
-title = "SERVERLESS - XỬ LÝ ĐƠN HÀNG VỚI SQS-SNS"
+title = "Trải nghiệm với Cloudscape"
 weight = 2
 languageName = "Tiếng Việt"
 

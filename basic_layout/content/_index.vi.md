@@ -1,40 +1,38 @@
 ---
-title : "Serverless - Xử lý đơn hàng với SQS-SNS"
+title : "Build a cloud experience with Cloudscape Design System"
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : false
 ---
-# Serverless - Xử lý đơn hàng với SQS-SNS
+# Build a cloud experience with Cloudscape Design System
 
-#### Tổng quan
+In this workshop, we will use the open source [Cloudscape Design System](https://cloudscape.design/)  to build a responsive and accessible web application for cloud management. The web application will leverage the open source React components offered by Cloudscape.
 
-Trong bài số 6 của series này, chúng ta sẽ xử lý các đơn đặt hàng của người dùng sử dụng Amazon SQS và SNS. Khi người dùng đặt hàng, đơn hàng sẽ được đẩy vào hàng đợi và SNS sẽ thông báo cho admin về đơn hàng mới đó. Admin có quyền xem tất cả các đơn đặt hàng và xử lý hoặc xoá chúng.
+We'll go from an empty React TypeScript project to building a basic application using Cloudscape components. You'll be introduced to a few of our core patterns, along with the corresponding components necessary to implement these patterns. Every step in this workshop can be started independently by checking out the associated branch.
 
-Kiến trúc của ứng dụng web sẽ như sau:
-![SeverlessExample](/images/serverless-diagram.png?featherlight=false&width=50pc)
+#### Learning Objectives
+The main learning objective of this workshop is to introduce you to Cloudscape through building a web application.
 
-- Khi người dùng đặt hàng (ấn **Checkout**), API POST /books/order đưa thông tin của đơn hàng vào hàng đợi mà bạn tạo, sau đó pulish một tin nhắn qua Amazon SNS topic
-- API GET /books/order được gọi khi admin sử dụng tính năng quản lý đơn hàng để lấy toàn bộ đơn hàng chưa xử lý trong hàng đợi và đã xử lý trong bảng của DynamoDB
-- Khi Admin xử lý đơn hàng (ấn **Handle**),  API POST /books/order/handle sẽ đẩy đơn hàng vào DynamoDB và xoá nó trong hàng đợi
-- Khi Admin xoá đơn hàng (ấn **Delete**), API DELETE /books/order sẽ xoá đơn hàng khỏi hàng đợi
+This workshop is divided into three steps:
 
-#### Amazon Simple Queue Service
-Amazon Simple Queue Service cung cấp một hàng đợi an toàn, bền vững và có sẵn cho phép bạn tích hợp và tách rời các hệ thống và thành phần phần mềm phân tán. Nó có thể mở rộng quy mô độc lập với ứng dụng của chúng ta. Nó cung cấp một API dịch vụ web chung mà bạn có thể truy cập bằng bất kỳ ngôn ngữ lập trình nào mà AWS SDK hỗ trợ. Amazon SQS hỗ trợ cả hàng đợi tiêu chuẩn và FIFO. 
+1. In the first step, you will learn how to create the basic structure for the webapp. It contains the top navigation and the application layout which will be used throughout the workshop.
+2. The second step is all about viewing resources. You will implement a table and enrich its functionality step by step.
+3. Finally, in the third step, you will learn about creating resources and validation. You will see how form handling works with Cloudscape by using multiple patterns.
 
-Một hệ thống message phân tán gồm 3 phần chính: các thành phần của hệ thống phân tán, hàng đợi của bạn (được phân phối trên máy chủ Amazon SQS) và các tin nhắn trong hàng đợi. Ví dụ: hệ thống của bạn có một số nhà sản xuất (thành phần gửi thông điệp đến hàng đợi) và người tiêu dùng (thành phần nhận thông báo từ hàng đợi). Hàng đợi (chứa các thông báo) lưu trữ các thông báo trên máy chủ Amazon SQS.
+Here's a preview showing the workshop application we're building:
+|  Step 1: Basic layout        |   Step 2: Table view        |   Step 3: Creation flow       |
+| :-------------: | :-------------: |:--------------:|
+| ![Preparation](/images/0.png?false&width=90pc) | ![Preparation](/images/0.png?false&width=90pc) |    ![Preparation](/images/0.png?false&width=90pc) |
 
-![SeverlessExample](/images/sqs-basic.png?featherlight=false&width=55pc)
+#### About Cloudscape Design System
 
+Cloudscape  is an open source design system to create web applications. It was built for and is used by Amazon Web Services (AWS) products and services. We created it in 2016 to improve the user experience across web applications owned by AWS services, and also to help teams implement those applications faster. Since then, we have continued enhancing the system based on customer feedback and research.
+#### Audience
+This workshop requires knowledge of frontend development. As such, you should be familiar with: React, TypeScript, Git, the JavaScript programming language, and typing commands in the Terminal.
+#### Content
 
-#### Amazon Simple Notification Service
-Amazon Simple Notification Service (SNS) một dịch vụ được quản lý để cung cấp dịch vụ gửi tin nhắn từ publishers đến subscribers (còn được gọi là producers và consumers). Publishers giao tiếp không đồng bộ với subscribers bằng cách gửi tin nhắn đến một topic, đây là điểm truy cập và kênh giao tiếp logic. Khách hàng có thể đăng ký SNS topic và nhận các tin nhắn đã xuất bản bằng cách sử dụng loại điểm cuối được hỗ trợ, chẳng hạn như Amazon Kinesis Data Firehose, Amazon SQS, AWS Lambda, HTTP, email, thông báo đẩy trên thiết bị di động và tin nhắn văn bản di động (SMS).
-
-![SeverlessExample](/images/sns-basic.png?featherlight=false&width=50pc)
-
-#### Nội dung
-
- 1. [Chuẩn bị](1-preparation/)
- 2. [Tạo hàng đợi và SNS topic](2-create-sqs-and-sns/)
- 3. [Tạo API và Lambda function](3-create-api-lambda-function/)
- 4. [Kiểm tra hoạt động](4-test-operation/)
- 5. [Dọn dẹp tài nguyên](5-cleanup)
+ 1. [Preparation](1-preparation/)
+ 2. [Basic Layout](2-basic-layout/)
+ 3. [Table View](3-table-view/)
+ 4. [Creation Flow](4-creation-flow/)
+ 5. [Wrapping up](wrapping-up/)
