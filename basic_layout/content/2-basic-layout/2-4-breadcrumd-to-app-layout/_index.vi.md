@@ -1,14 +1,13 @@
 ---
-title : "Add the breadcrumb component to the app layout"
+title : "Thêm Breadcumb vào app layout của bạn"
 date :  "`r Sys.Date()`" 
 weight : 4 
 chapter : false
 pre : " <b>2.4.</b> "
 ---
-Similar to how we added the side navigation component to app layout, we're now creating a breadcrumb group component and wiring it up to the app layout component.
+Tương tự như cách chúng tôi thêm side navigation vào app layput, bây giờ chúng tôi đang tạo breadcrumb và kết nối nó với app layout.
 
-Take a look at the guidance and examples for [breadcrumb group](https://cloudscape.design/components/breadcrumb-group/) . Add the breadcrumb group component on your own using dummy data. Create the component in a separate file (```src/pages/home/components/breadcrumbs.tsx```) and attach the component to the app layout's ```breadcrumbs``` slot.
-
+Hãy xem hướng dẫn và ví dụ cho [group breadcrumb](https://cloudscape.design/components/breadcromb-group/). Thêm breadcrumb bằng cách sử dụng dữ liệu dummy. Tạo thành phần trong một tập tin riêng biệt (``src/pages/home/components/breadcrumbs.tsx`) và thêm thành phần vào```breadcreumbs``` của app layout.
 Here's what ```src/pages/home/components/breadcrumbs.tsx``` looks like:
 ```
 import React from 'react';
@@ -28,8 +27,9 @@ export default function Breadcrumbs() {
 }
 ```
 Next, we provide the ```Breadcrumbs``` component to the app layout as we did it with the side navigation in the previous step.
+Tiếp theo, chúng tôi cung cấp ```Breadcrumbs``` component cho app layout chúng tôi đã làm với side navigation ở bước trước.
 
-{{%expand "See how src/pages/home/app.tsx looks like after this step." %}}
+{{%expand "Xem src/pages/home/app.tsx trông như thế nào sau bước này." %}}
 ```
 import React from 'react';
 import TopNavigation from '@cloudscape-design/components/top-navigation';
@@ -76,6 +76,6 @@ export default function App() {
 ```
 {{% /expand%}}
 
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+{{%expand "Xem ảnh chụp màn hình của trang trông như thế nào sau bước này." %}}
 ![Preparation](/images/7.png?false&width=90pc)
 {{% /expand%}}

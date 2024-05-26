@@ -5,23 +5,22 @@ weight : 4
 chapter : false
 pre : " <b>3.3.</b> "
 ---
-#### Introduction to collection hooks
+#### Giới thiệu về hooks
+Bây giờ chúng ta đang học về Hooks. Hooks giúp bạn xử lý các hoạt động dữ liệu trong các thành phần thu thập dữ liệu như bảng hoặc thẻ. Gói này cung cấp các tiện ích để xử lý các hoạt động lọc, sắp xếp hoặc trang hoá cho các bộ sưu tập của khách hàng ("bộ sưu tập của khách hàng" có nghĩa là toàn bộ tập dữ liệu mô tả tập hợp được lấy từ phía khách hàng).
 
-We're now learning about collection hooks. Collection hooks help you handle data operations in collection components such as table or cards. The package provides utilities to handle filtering, sorting, or pagination operations for client-side collections ("client-side collections" means the full dataset describing the collection is fetched on the client side).
+Hãy dành vài phút và làm quen với [collection hooks documentation](https://cloudscape.design/get-started/dev-guides/collection-hooks/).
 
-Take a few minutes and familiarize yourself with the [collection hooks documentation](https://cloudscape.design/get-started/dev-guides/collection-hooks/).
+#### Thêm hooks vào thành phần bảng
 
-#### Add collection hooks to the table component
+Gói ``@cloudscape-design/collection-hooks``được exports từ ``useCollection`` hook. Nó cần các mục bộ sưu tập gốc và một cấu hình để trả về nội dung được lọc, sắp xếp và trang hóa, tùy theo cấu hình của bạn. Vậy hãy xác định cấu hình, truyền các mục gốc cho nó, và thiết lập nó.
 
-The ``@cloudscape-design/collection-hooks`` package exports the ``useCollection`` hook. It takes the original collection items and a configuration to return filtered, sorted, and paginated content, according to your configuration. So let's define the configuration, pass the original items to it, and get it set up.
-
-1. Open ``src/pages/flavors/components/flavors-table.tsx``
-2. Import the useCollection hook with ``import { useCollection } from '@cloudscape-design/collection-hooks';``
-3. Define a state to store the various preference state of our collection inside the VariationTable component.
+1. Mở ``src/pages/flavors/components/flavors-table.tsx``
+2. Nhập useCollection hook với  ``import { useCollection } from '@cloudscape-design/collection-hooks';``
+3. Xác định trạng thái để lưu trữ các trạng thái ưu tiên khác nhau của bộ sưu tập bên trong thành phần VariationTable.
     ```
     const [preferences, setPreferences] = useState<CollectionPreferencesProps['preferences']>({ pageSize: 20 });
     ```
-Next, we add the ``useCollection`` hook below the preferences hook. Pass our original items to it and define the configuration. Find the configuration details on the [collection hook API documentation website](https://cloudscape.design/get-started/dev-guides/collection-hooks/#api).
+Tiếp theo, chúng tôi thêm ``useCollection``hook bên dưới ``preferences'' hook. Gửi các mục gốc của chúng tôi cho nó và xác định cấu hình. Tìm cái cấu hình chi tiết tại [collection hook API documentation website](https://cloudscape.design/get-started/dev-guides/collection-hooks/#api).
 
 ```  
   const { items, filterProps, filteredItemsCount, paginationProps, collectionProps } = useCollection<Flavor>(flavors, {
@@ -32,9 +31,10 @@ Next, we add the ``useCollection`` hook below the preferences hook. Pass our ori
 });
 ```
 Update your table's ``items`` property to now use the returned items value from the hook instead of ``flavors``, and that's it! When you take a look at the page in your browser, you won't see any visual changes. That's because this step contained the basic setup of the collection hook. We'll connect the different parts (pagination, sorting, filter) with the table in the next steps.
+Cập nhật thuộc tính ``items`` của bảng để bây giờ sử dụng giá trị của các mục trả về từ hook thay vì ``flavors``, và đó là tất cả! Khi bạn nhìn vào trang trong trình duyệt, bạn sẽ không thấy bất kỳ thay đổi trực quan nào. Đó là bởi vì bước này chứa các thiết lập cơ bản. Chúng tôi sẽ kết nối các phần khác nhau (phân trang, sắp xếp, lọc) với bảng trong các bước tiếp theo.
 
 
-{{%expand "See how src/pages/flavors/components/flavors-table.tsx looks like after this step." %}}
+{{%expand "Xem src/pages/flavor/components/flavors-table.tsx trông như thế nào sau bước này." %}}
 ```
 import React from 'react';
 import Header from '@cloudscape-design/components/header';

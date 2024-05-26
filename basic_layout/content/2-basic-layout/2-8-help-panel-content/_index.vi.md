@@ -1,8 +1,9 @@
 ---
-title : "Add help panel content (optional)"
+title : "Thêm nội dung vào bảng trợ giúp (optional)"
 date :  "`r Sys.Date()`" 
 weight : 8 
 chapter : false
 pre : " <b>2.8.</b> "
 ---
-It's time to add content to the app layout's tools panel. Take a look at the help panel [component documentation](https://cloudscape.design/components/help-panel/?tabId=playground)  and usage guidelines and try to add it to AppLayout component tools.
+
+Đã đến lúc thêm nội dung vào bảng công cụ của app layout. Hãy xem bảng trợ giúp [component documentation](https://cloudscape.design/components/help-panel/?tabId=playground) và hướng dẫn sử dụng và thử thêm nó vào AppLayout.

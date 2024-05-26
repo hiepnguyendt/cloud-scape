@@ -5,11 +5,10 @@ weight : 1
 chapter : false
 pre : " <b>2.1.</b> "
 ---
-Let's start building our application by first adding the [top navigation component](https://cloudscape.design/components/top-navigation/) . The top navigation contains our logo and can include additional navigation elements, all of which will persist across all our service pages.
-
-1. Open `src/pages/home/app.tsx` in your IDE.
-2. Import the component by `import TopNavigation from '@cloudscape-design/components/top-navigation';`.
-3. Add the <TopNavigation /> component to the `App` component's return statement.
+Trước tiên, hãy bắt đầu xây dựng ứng dụng của chúng ta bằng cách thêm [top navigation component](https://cloudscape.design/comComponents/top-navigation/) . Top navigation chứa logo và có thể bao gồm các thành phần điều hướng bổ sung, tất cả những yếu tố này sẽ tồn tại trên tất cả các trang dịch vụ.
+1. Mở file `src/pages/home/app.tsx`.
+2. Thêm `import TopNavigation from '@cloudscape-design/components/top-navigation';`.
+3. Thêm <TopNavigation /> vào `App`.
     ```
     import React from 'react';
     import TopNavigation from '@cloudscape-design/components/top-navigation';
@@ -31,8 +30,8 @@ Let's start building our application by first adding the [top navigation compone
     }
 
     ```
-    Take a look in your [browser](http://localhost:8000/home/index.html)  to see the top navigation component in action 🚀
+    Truy cập [browser](http://localhost:8000/home/index.html)  để xem kết quả sau khi thêm top navigation component 🚀
     
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+{{%expand "Xem sự thay đổi của trang sau khi thực hiện bước này" %}}
 ![Preparation](/images/3.png?false&width=90pc)
 {{% /expand%}}

@@ -1,16 +1,16 @@
 ---
-title : "Prepare the column definitions"
+title : "Chuẩn bị định nghĩa cột"
 date :  "`r Sys.Date()`" 
 weight : 2 
 chapter : false
 pre : " <b>3.1.</b> "
 ---
-We can now define what each column in the table will display by setting column definitions with the following steps:
+Bây giờ chúng ta có thể xác định những gì mỗi cột trong bảng sẽ hiển thị bằng cách thiết lập định nghĩa cột với các bước sau:
 
-1. Open ``src/pages/flavors/components/flavors-table.tsx`` in your IDE. This custom component is already embedded in the flavors page inside ``src/pages/flavors/app.tsx``. It receives the data that we want to display in the table as a property.
-2. To get a sense about the data we'll display, take a look at the ``Flavor`` interface in src/pages/flavors/data.ts. We use mock data for the workshop. In a real world application the data would be obtained by fetching it from a server.
-3. Based on this interface, create the column definitions inside ``src/pages/flavors/components/flavors-table.tsx``. Follow the given structure from the [table API documentation](https://cloudscape.design/components/table/?tabId=api) 
-4. Import the TableProps interface using ``import { TableProps } from '@cloudscape-design/components/table';``. Here's the columnDefinitions we're using placed above the existing VariationTable component:
+1. Mở ``src/pages/flavours/components/flavors-table.tsx`` trong IDE của bạn. Thành phần tùy chỉnh này đã được nhúng vào trang bên trong ``src/pages/flavors/app.tsx``. Nó nhận được dữ liệu mà chúng ta muốn hiển thị trong bảng như một thuộc tính.
+2. Để hiểu được dữ liệu chúng tôi sẽ hiển thị, hãy xem giao diện ``Flavor`` trong ``src/pages/flavors/data.ts``. Chúng tôi sử dụng dữ liệu tạm cho workshop. Trong một ứng dụng thực, dữ liệu sẽ được lấy từ một máy chủ.
+3. Dựa trên giao diện này, tạo ra các định nghĩa cột bên trong ``src/pages/flavor/components/flavors-table.tsx``. Thực hiện theo cấu trúc từ [table API documentation](https://cloudscape.design/components/table/?tabId=api) 
+4. Nhập giao diện TableProps bằng cách sử dụng ``import { Tableprops } from '@cloudscape-design/components/table';``. Đây là columnDefinitions chúng tôi đang sử dụng đặt trên thành phần VariationTable hiện có:
     ```
     const columnDefinitions: TableProps<Flavor>['columnDefinitions'] = [
     {

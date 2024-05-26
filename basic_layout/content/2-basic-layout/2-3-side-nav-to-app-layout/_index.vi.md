@@ -1,22 +1,22 @@
 ---
-title : "Add the side navigation component to the app layout"
+title : "Thêm side navigation component vào app layout"
 date :  "`r Sys.Date()`" 
 weight : 3 
 chapter : false
 pre : " <b>2.3.</b> "
 ---
-Next, we will extend the app layout with the [side navigation component](https://cloudscape.design/components/side-navigation/?tabId=playground). The side navigation will be shown inside the app layout's navigation slot. It contains a list of navigational links that point to the pages within an application.
+Tiếp theo, chúng ta sẽ mở rộn app layout với [side navigation component](https://cloudscape.design/components/side-navigation/?tabId=playground). Side navigation sẽ được hiển thị bên trong navigation của app layout. Nó chứa danh sách các liên kết điều hướng trỏ đến các trang trong ứng dụng.
 
-Take a look at the guidance and examples for [side navigation](https://cloudscape.design/components/side-navigation/?tabId=playground)  and [app layout](https://cloudscape.design/components/app-layout/?tabId=api) . Try to add the side navigation on your own using dummy data. Create the component in a separate file (```src/pages/home/components/navigation.tsx```) and provide the component to the app layout's navigation slot.
+Hãy xem hướng dẫn và ví dụ về [side navigation](https://cloudscape.design/comComponents/side-navigation/?tabId=playground) và [app layout](https://cloudscape.design/comComponents/app-layout/?tabId=api). Tạo thành phần trong một tệp riêng biệt (```src/pages/home/comComponents/navigation.tsx```) và cung cấp thành phần đó cho vùng điều hướng của bố cục ứng dụng.
 
-Here are the individual steps to create the side navigation in a separate file:
+Dưới đây là các bước để tạo side navigation bên trong một tệp riêng biệt:
 
-1. Open ```src/pages/home/components/navigation.tsx``` and import the component and it's props using ```import SideNavigation, { SideNavigationProps } from '@cloudscape-design/components/side-navigation';```.
-2. Add the <SideNavigation /> inside our custom <Navigation /> component and wire it with the properties we want to display in the side navigation:
-3. Specify the href of the currently active link we use the current path name location.pathname.
-4. Set the header property to the current page ```header={{ href: '/home/index.html', text: 'Service' }}```
+1. Mở ```src/pages/home/comComponents/navigation.tsx``` và nhập thành phần bằng cách sử dụng ```import SideNavigation, { SideNavigationProps } from '@cloudscape-design/comComponents/side-navigation' ;```.
+2. Thêm <SideNavigation /> bên trong thành phần <Navigation /> và kết nối nó với các thuộc tính mà bạn muốn hiển thị trong side navigation:
+3. Chỉ định href của liên kết hiện đang hoạt động, chúng tôi sử dụng tên đường dẫn hiện tại location.pathname.
+4. Đặt thuộc tính header cho trang hiện tại ```header={{ href: '/home/index.html', text: 'Service' }}```
 
-Here's how ```src/pages/home/components/navigation.tsx``` looks like:
+ ```src/pages/home/components/navigation.tsx``` sẽ trông như thế này:
     ```
     import React from 'react';
     import SideNavigation, { SideNavigationProps } from '@cloudscape-design/components/side-navigation';
@@ -40,12 +40,12 @@ Here's how ```src/pages/home/components/navigation.tsx``` looks like:
 
     ```
 
-Now attach the previously created component with the app layout to display it:
-1. Open ```src/pages/home/app.tsx``` in your IDE.
-2. Import our ```<Navigation />``` component with ```import Navigation from './components/navigation';```.
-3. Add it to the ```<AppLayout />```'s navigation property: ```navigation={<Navigation />}```.
-
+Bây giờ hãy đính kèm thành phần đã tạo trước đó với app layout để hiển thị nó:
+1. Mở file ```src/pages/home/app.tsx```.
+2. Thêm ```<Navigation />``` với ```import Navigation from './components/navigation';```.
+3. Thêm thành phần ```navigation={<Navigation />}``` vào thuộc tính navigation của thành phần ``<AppLayout />``:
 {{%expand "See how src/pages/home/app.tsx looks like after this step." %}}
+
 ```
 import React from 'react';
 import TopNavigation from '@cloudscape-design/components/top-navigation';
@@ -90,6 +90,6 @@ export default function App() {
 ```
 {{% /expand%}}
 
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+{{%expand "Trang sẽ trông như thế này sau khi thực hiện bước này." %}}
 ![Preparation](/images/6.png?false&width=90pc)
 {{% /expand%}}

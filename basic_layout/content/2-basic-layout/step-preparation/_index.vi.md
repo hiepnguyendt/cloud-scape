@@ -1,25 +1,25 @@
 ---
-title : "Step preparation"
+title : " Bước chuẩn bị"
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : false
 pre : " <b> </b> "
 ---
-Before we start, let's prepare our environment for this workshop step.
-1. Ensure you're in the cloudscape-design-system-workshop folder.
-2. If you have the development server already running, stop that command in your terminal.
-3. Check out the step-1 branch by executing:
+Trước khi chúng ta bắt đầu, hãy chuẩn bị môi trường của chúng ta cho bước hội thảo này.
+1. Đảm bảo bạn đang ở trong thư mục cloudscape-design-system-workshop.
+2. Nếu bạn đã có server đang chạy, hãy dừng lệnh đó trong terminal của bạn.
+3. Kiểm tra step-1 branch bằng cách thực hiện:
     ```
     git checkout step-1
     ```
 
-4. Spin up the development server by running:
+4. Run server lên bằng cách chạy:
     ```
         npm run dev
     ```
 
-5. Port 8080 verification.
-Verify the output in your terminal to check if the development server is running on port 8080. The output should mention port 8080 as below:
+5. Verify port 8080.
+Kiểm tra đầu ra trong thiết bị đầu cuối của bạn để kiểm tra xem server đang chạy trên cổng 8080. Đầu ra phải đề cập đến cổng 8080 như sau:
 
     ```
 
@@ -29,11 +29,11 @@ Verify the output in your terminal to check if the development server is running
     
     ```
 {{% notice note %}}
-**Troubleshooting: 'Port 8080 is already in use'.**\
-If the output states ``Port 8080 is in use, trying another one...`` then you need to close the command which uses this port. This could happen when the dev server has stopped and the port did not automatically close. To close the used port, first stop the dev server command followed by closing the process which runs on port 8080 by executing:\
+** Khắc phục sự cố: 'Cổng 8080 đã được sử dụng'.**\
+Nếu đầu ra cho biết ``Cổng 8080 đang được sử dụng, hãy thử một cổng khác...`` thì bạn cần phải đóng lệnh sử dụng cổng này. Điều này có thể xảy ra khi server dev dừng lại và cổng không tự động đóng. Để đóng cổng được sử dụng, trước tiên dừng lệnh máy chủ dev tiếp theo bằng cách đóng quá trình chạy trên cổng 8080 bằng cách thực hiện:\
     ```if [[ $(lsof -t -i:8080) ]]; then kill -9 $(sudo lsof -t -i:8080); fi```\
-Now, spin up the development server again and do the port 8080 verificatio
+Bây giờ, hãy chạy lại server và kiểm tra port 8080.
 {{% /notice %}}
 
-6. Open the `/home/index.html` page we are working on in your browser. The instructions differ depending on the environment where you are running the workshop.
+6. Mở trang `/home/index.html` mà chúng ta đang làm việc trong trình duyệt. Các hướng dẫn khác nhau tùy thuộc vào môi trường mà bạn đang chạy.
 ![Preparation](/images/3.png?false&width=90pc)

@@ -5,11 +5,11 @@ weight : 7
 chapter : false
 pre : " <b>3.6.</b> "
 ---
-Searching for names manually in this amount of data is time-consuming. Let's fix that by adding a text ``filter`` to the table. We do this through the table component's filter property. We add the [text filter component](https://cloudscape.design/components/text-filter/?tabId=playground)  to the table and wire it with the collection hooks' filterProps. In addition, we set the ``filteringPlaceholder`` and the ``countText`` property. The ``filteringPlaceholder`` is used as placeholder for the filtering input and the ``countText`` is a human-readable, localized string that indicates the number of results.
+Tìm kiếm tên theo cách thủ công trong lượng dữ liệu này là tốn thời gian. Hãy sửa điều đó bằng cách thêm văn bản ``filter`` vào bảng. Chúng tôi làm điều này thông qua thuộc tính lọc của thành phần bảng. Chúng tôi thêm thành phần bộ lọc văn bản (https://cloudscape.design/components/text-filter/?tabId=playground) vào bảng với hooks filterProps. Thêm vào đó, chúng tôi đặt thuộc tính ``filteringPlaceholder`` và ``countText``. ``filteringPlaceholder`` được sử dụng để giữ vị trí cho đầu vào lọc và ``countText`` là một chuỗi có thể đọc được bởi con người, được định vị cho biết số lượng kết quả.
 
-By adding text filter component, we introduce a new state on the table. What do we display if there aren't any matches? Remember the table view pattern you looked at when we started step 2? Right, it mentions the [empty state pattern](https://cloudscape.design/patterns/general/empty-states/). Take a few minutes and make yourself familiar. We'll use this pattern with a slightly different wording to reflect the ``noMatch`` state, which is displayed when the filtering operation doesn't return any matches.
+Bằng cách thêm thành phần bộ lọc văn bản, chúng tôi giới thiệu một trạng thái mới trên bảng. Chúng tôi sẽ hiển thị gì nếu không có kết quả nào? Bạn có nhớ mẫu xem bảng mà bạn đã xem khi chúng tôi bắt đầu bước 2 không? Phải, nó đề cập đến [empty state pattern](https://cloudscape.design/patterns/general/empty-states/). Hãy dành vài phút và làm quen. Chúng tôi sẽ sử dụng mô hình này với một cách diễn đạt hơi khác để phản ánh trạng thái ``noMatch``, được hiển thị khi hoạt động lọc không trả về bất kỳ sự phù hợp nào.
 
-To add this pattern, let's create a custom component in ``src/pages/flavors/components/flavors-table.tsx`` which builds the UI:
+Để thêm mô hình này, hãy tạo một thành phần tùy chỉnh trong ``src/pages/flavours/components/flavors-table.tsx`` mà xây dựng UI:
 
   ```
   // Add the Box to your imports at the top of the file
@@ -52,10 +52,10 @@ To add this pattern, let's create a custom component in ``src/pages/flavors/comp
 );
 
   ```
+  Nhìn vào trình duyệt của bạn và tìm kiếm bất cứ thứ gì không tồn tại trong bảng để xem trạng thái trống được phản ánh. Để biết thêm chi tiết về các cài đặt lọc bổ sung, hãy xem [collection hooks API documentation](https://cloudscape.design/get-started/dev-guides/collection-hooks/#api).
 
-  Take a look in your browser and search for anything that doesn't exist in the table to see the empty state reflected. For more details about additional filtering settings, refer to the [collection hooks API documentation](https://cloudscape.design/get-started/dev-guides/collection-hooks/#api).
 
-  {{%expand "See how src/pages/flavors/components/flavors-table.tsx looks like after this step." %}}
+  {{%expand "Xem src/pages/flavor/components/flavors-table.tsx trông như thế nào sau bước này." %}}
 ```
 import React, { useState, ReactNode } from 'react';
 import Header from '@cloudscape-design/components/header';
@@ -188,17 +188,17 @@ export default function VariationTable({ flavors }: VariationTableProps) {
 ```
   {{% /expand%}}
 
-  {{%expand "See the screenshot of how the page looks like after this step." %}}
+  {{%expand "Xem ảnh chụp màn hình của trang trông như thế nào sau bước này." %}}
 ![Preparation](/images/18.png?false&width=90pc)
 {{% /expand%}}
 
-#### Apply the empty state pattern (optional)
+#### Áp dụng mẫu trạng thái trống (optional)
 
-Now it's up to you, add the empty state to the table. Hint: it's part of the collection hooks filter setting. You can find an example in the [collection hooks documentation](https://cloudscape.design/get-started/dev-guides/collection-hooks/#using-with-react).
+Bây giờ phụ thuộc vào bạn, thêm trạng thái trống vào bảng. Mẹo: nó là một phần của thiết lập bộ lọc. Bạn có thể tìm thấy một ví dụ trong [documentation hooks collection](https://cloudscape.design/get-started/dev-guides/collection-hooks/#using-with-react).
 
-You can test it by setting the ``allItems`` property of the ``useCollection`` hook to an empty array.
+Bạn có thể kiểm tra nó bằng cách đặt thuộc tính ``allItems`` của ``useCollection`` hook vào một mảng trống.
 
-{{%expand "See how src/pages/flavors/components/flavors-table.tsx looks like after this step." %}}
+{{%expand "Xem src/pages/flavor/components/flavors-table.tsx trông như thế nào sau bước này." %}}
 ```
 import React, { useState, ReactNode } from 'react';
 import Header from '@cloudscape-design/components/header';
@@ -333,6 +333,6 @@ export default function VariationTable({ flavors }: VariationTableProps) {
 }
 ```
 {{% /expand%}}
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+{{%expand "Xem ảnh chụp màn hình của trang trông như thế nào sau bước này." %}}
 ![Preparation](/images/19.png?false&width=90pc)
 {{% /expand%}}

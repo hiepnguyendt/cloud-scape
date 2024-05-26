@@ -6,6 +6,8 @@ chapter : false
 pre : " <b>2.6.</b> "
 ---
 We've added predefined content for the dashboard page (we won't cover this in detail) inside ```src/pages/home/components/prepared-dashboard-content.tsx```. Import this component in the app by using ```import PreparedDashboardContent from './components/prepared-dashboard-content';``` and add the component as a child of the **ContentLayout** component. After that, take a look in your browser to explore the different components.
+
+Chúng tôi đã thêm nội dung được xác định sẵn cho trang (chúng tôi sẽ không bao gồm chi tiết này) bên trong ```src/pages/home/components/prepared-dashboard-content.tsx```. Nhập thành phần này vào ứng dụng bằng cách dùng ```import PreparedDashboardContent from './components/prepared-dashboard-content';``` và thêm thành phần đó dưới dạng một con của thành phần **ContentLayout**. Sau đó, hãy nhìn vào trình duyệt của bạn để khám phá các thành phần khác nhau.
 ```
 // AppLayout's content property:
 content={
@@ -68,6 +70,6 @@ export default function App() {
 ```
 {{% /expand%}}
 
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+{{%expand "Xem ảnh chụp màn hình của trang trông như thế nào sau bước nàys" %}}
 ![Preparation](/images/9.png?false&width=90pc)
 {{% /expand%}}

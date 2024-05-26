@@ -5,30 +5,12 @@ weight : 1
 chapter : false
 pre : " <b> 1. </b> "
 ---
-Before we get to the main content of this workshop, we need to reset the web application.
-1. Download the below source code
+In this workshop, we will use the open source Cloudscape Design System to build a responsive and accessible web application for cloud management. The web application will leverage the open source React components offered by Cloudscape. The workshop requires knowledge of front-end development, React and TypeScript.
 
+You'll start this workshop with an empty React TypeScript project and finish by building a basic application using Cloudscape components. Along the way, you'll be introduced to a few of our core patterns and corresponding components necessary to implement these patterns.
 
-2. Run the below commands
-    ```
-    sam build
-    sam deploy --guided
-    ```
+If you have any issues during the workshop, please reach out to us directly. We'll do our best to help.
 
-3. Enter the following content:
-    - Stack Name []: `fcj-book-shop`
-    - AWS Region []: `ap-southeast-1`
-    - Confirm changes before deploy [Y/n]: **y**
-    - Allow SAM CLI IAM role creation [Y/n]: **y**
-    - Disable rollback [y/N]: **y**
-    - BooksList may not have authorization defined, Is this okay? [y/N]: **y**
-    - BookCreate may not have authorization defined, Is this okay? [y/N]: **y**
-    - BookDelete may not have authorization defined, Is this okay? [y/N]: **y**
-    - Login may not have authorization defined, Is this okay? [y/N]: **y**
-    - Register may not have authorization defined, Is this okay? [y/N]: **y**
-    - ConfirmUser may not have authorization defined, Is this okay? [y/N]: **y**
-    - Save arguments to configuration file [Y/n]: **y**
-
-4. Open [AWS APIs Gateway console](https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1)
-
-
+#### Workshop Resources
+1. [Cloudscape documentation website](https://cloudscape.design/) 
+2. [Workshop package on GitHub](https://github.com/aws-samples/cloudscape-design-system-workshop) 

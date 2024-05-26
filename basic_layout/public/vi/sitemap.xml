@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//localhost:1313/vi/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/1-preparation/</loc>
     <xhtml:link
                 rel="alternate"
@@ -24,18 +36,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/1-preparation/install/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/2-basic-layout/step-preparation/</loc>

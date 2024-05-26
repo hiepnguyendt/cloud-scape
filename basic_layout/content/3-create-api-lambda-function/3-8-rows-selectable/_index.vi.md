@@ -1,18 +1,17 @@
 ---
-title : "Make table rows selectable"
+title : "Làm cho hàng của bảng có thể chọn"
 date :  "`r Sys.Date()`" 
 weight : 9 
 chapter : false
 pre : " <b>3.8.</b> "
 ---
-To allow users to take an action on the items in the collection, you can enable the selection functionality. The table component comes with different selection types: ``none`` (default), ``single`` (allows a single item to be selected using a radio button in the table row) and ``multi`` (allows multiple items to be selected at a time using check boxes for each item). To make use of the single selection type, we need to do the following:
+Để cho phép người dùng thực hiện hành động đối với các mục trong bộ sưu tập, bạn có thể bật chức năng chọn. Thành phần bảng đi kèm với các loại lựa chọn khác nhau: ``none`` (tùy chọn mặc định), ``single`` (cho phép một mục duy nhất được chọn bằng một nút vô tuyến trong hàng bảng) và ``multi`` (allows multiple items to be selected at a time using check boxes for each item). Để sử dụng loại lựa chọn đơn, chúng ta cần làm như sau:
+- Bao gồm số lượng các mục đã chọn trong bộ đếm tài nguyên tiêu đề.
+- Thêm ``action`` vào ``Table``. Chúng tôi sẽ thêm hai nút: nút "Create flavor" và nút "Edit", được bật nếu người dùng đã chọn một mục trong bảng. Nút Sửa sẽ chuyển hướng đến trang sửa trong ví dụ chỉ đọc này. Thoải mái trải nghiệm để tùy chỉnh nó khi sử dụng nó trong ứng dụng tương tác đầy đủ của bạn.
 
-- Include the number of selected items in the header resource counter.
-- Add ``actions`` to the ``Table``. We'll add two buttons: a "Create flavor" button and an "Edit" button, which is enabled if a user has selected an item in the table. The Edit button redirects to the edit page in this read-only example. Feel free to adapt it when using it in your full interactive application.
+Hãy bắt đầu kích hoạt lựa chọn bằng cách thêm thuộc tính ``selectionType="single`` vào bảng. Khi xem ứng dụng trong trình duyệt của bạn, bạn sẽ thấy các nút radio ở mỗi hàng.
 
-Let's start enabling selection by adding the ``selectionType="single`` property to the table. When viewing the application in your browser, you'll see radio buttons in each row.
-
-Next, we'll extend the table header to indicate the selection in the header. For getting the header counter text, we'll make use of this helper outside the table:
+Tiếp theo, chúng tôi sẽ mở rộng tiêu đề bảng để chỉ ra sự lựa chọn trong tiêu đề. Để có được văn bản đếm tiêu đề, chúng tôi sẽ sử dụng trợ lý này bên ngoài bảng:
   ```
   const getHeaderCounterText = (items: readonly Flavor[] = [], selectedItems: readonly Flavor[] = []) => {
   return selectedItems && selectedItems.length > 0 ? `(${selectedItems.length}/${items.length})` : `(${items.length})`;
@@ -20,7 +19,7 @@ Next, we'll extend the table header to indicate the selection in the header. For
 
   ```
 
-Here's the updated Table header property. As you can see, we enable the Edit button only if a row is selected.
+Đây là thuộc tính tiêu đề bảng được cập nhật. Như bạn có thể thấy, chúng tôi chỉ bật nút sửa nếu một hàng được chọn.
 
 ```
 <Header
@@ -39,9 +38,9 @@ Here's the updated Table header property. As you can see, we enable the Edit but
 </Header>
 
 ```
-Take a look in your browser and try out the recently added selection functionality. You'll see that when selecting a row, it gets reset across pagination, sorting, filtering, and page size changes. This is to prevent users from performing actions on items they might not know are selected.
+Hãy nhìn vào trình duyệt của bạn và thử các chức năng lựa chọn được thêm vào gần đây. Bạn sẽ thấy rằng khi bạn chọn một hàng, nó sẽ được đặt lại trong các thay đổi về trang, sắp xếp, lọc và kích cỡ trang. Điều này là để ngăn người dùng thực hiện các hành động trên các mục mà họ có thể không biết là đã được chọn.
 
-{{%expand "See how src/pages/flavors/components/flavors-table.tsx looks like after this step." %}}
+{{%expand "Xem src/pages/flavours/components/flavors-table.tsx trông như thế nào sau bước này." %}}
 ```
 import React, { useState, ReactNode } from 'react';
 import Header from '@cloudscape-design/components/header';
@@ -214,6 +213,6 @@ export default function VariationTable({ flavors }: VariationTableProps) {
 ```
 {{% /expand%}}
 
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+{{%expand "Xem ảnh chụp màn hình của trang trông như thế nào sau bước này." %}}
 ![Preparation](/images/21.png?false&width=90pc)
 {{% /expand%}}

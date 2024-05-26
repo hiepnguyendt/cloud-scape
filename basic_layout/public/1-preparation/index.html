@@ -12,21 +12,21 @@
     <title>Preparation ::  Build a cloud experience with Cloudscape Design System</title>
 
     
-    <link href="/css/nucleus.css?1716477378" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1716477378" rel="stylesheet">
-    <link href="/css/hybrid.css?1716477378" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1716477378" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1716477378" rel="stylesheet">
-    <link href="/css/auto-complete.css?1716477378" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1716477378" rel="stylesheet">
-    <link href="/css/theme.css?1716477378" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1716477378" rel="stylesheet">
+    <link href="/css/nucleus.css?1716534515" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1716534515" rel="stylesheet">
+    <link href="/css/hybrid.css?1716534515" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1716534515" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1716534515" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716534515" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1716534515" rel="stylesheet">
+    <link href="/css/theme.css?1716534515" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1716534515" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1716477378" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1716534515" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1716477378"></script>
+    <script src="/js/jquery-3.3.1.min.js?1716534515"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1716477378"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1716477378"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1716534515"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1716534515"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1716477378"></script>
+<script type="text/javascript" src="/js/search.js?1716534515"></script>
 
     
   </div>
@@ -119,7 +119,7 @@
         
         ">
       <a href="/1-preparation/install/">
-           <b> 1. </b> Install
+           <b> 1.1. </b> Install
           
             <i class="fas fa-check read-icon"></i>
           
@@ -147,7 +147,7 @@
         
         ">
       <a href="/1-preparation/setup/">
-           <b> 2. </b> Setup Environment
+           <b> 1.2. </b> Setup Environment
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1155,7 +1155,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>27-11-2023</font></i>
+        <i><font color=orange>24-05-2024</font></i>
     </left>
     <left>
         <br>
@@ -1216,7 +1216,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1240,36 +1248,13 @@
 
 
 
-	<p>Before we get to the main content of this workshop, we need to reset the web application.</p>
+	<p>In this workshop, we will use the open source Cloudscape Design System to build a responsive and accessible web application for cloud management. The web application will leverage the open source React components offered by Cloudscape. The workshop requires knowledge of front-end development, React and TypeScript.</p>
+<p>You&rsquo;ll start this workshop with an empty React TypeScript project and finish by building a basic application using Cloudscape components. Along the way, you&rsquo;ll be introduced to a few of our core patterns and corresponding components necessary to implement these patterns.</p>
+<p>If you have any issues during the workshop, please reach out to us directly. We&rsquo;ll do our best to help.</p>
+<h4 id="workshop-resources">Workshop Resources</h4>
 <ol>
-<li>
-<p>Download the below source code</p>
-</li>
-<li>
-<p>Run the below commands</p>
-<pre tabindex="0"><code>sam build
-sam deploy --guided
-</code></pre></li>
-<li>
-<p>Enter the following content:</p>
-<ul>
-<li>Stack Name []: <code>fcj-book-shop</code></li>
-<li>AWS Region []: <code>ap-southeast-1</code></li>
-<li>Confirm changes before deploy [Y/n]: <strong>y</strong></li>
-<li>Allow SAM CLI IAM role creation [Y/n]: <strong>y</strong></li>
-<li>Disable rollback [y/N]: <strong>y</strong></li>
-<li>BooksList may not have authorization defined, Is this okay? [y/N]: <strong>y</strong></li>
-<li>BookCreate may not have authorization defined, Is this okay? [y/N]: <strong>y</strong></li>
-<li>BookDelete may not have authorization defined, Is this okay? [y/N]: <strong>y</strong></li>
-<li>Login may not have authorization defined, Is this okay? [y/N]: <strong>y</strong></li>
-<li>Register may not have authorization defined, Is this okay? [y/N]: <strong>y</strong></li>
-<li>ConfirmUser may not have authorization defined, Is this okay? [y/N]: <strong>y</strong></li>
-<li>Save arguments to configuration file [Y/n]: <strong>y</strong></li>
-</ul>
-</li>
-<li>
-<p>Open <a href="https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1">AWS APIs Gateway console</a></p>
-</li>
+<li><a href="https://cloudscape.design/">Cloudscape documentation website</a></li>
+<li><a href="https://github.com/aws-samples/cloudscape-design-system-workshop">Workshop package on GitHub</a></li>
 </ol>
 
 
@@ -1884,19 +1869,19 @@ sam deploy --guided
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1716477378"></script>
-    <script src="/js/perfect-scrollbar.min.js?1716477378"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1716477378"></script>
-    <script src="/js/jquery.sticky.js?1716477378"></script>
-    <script src="/js/featherlight.min.js?1716477378"></script>
-    <script src="/js/highlight.pack.js?1716477378"></script>
+    <script src="/js/clipboard.min.js?1716534515"></script>
+    <script src="/js/perfect-scrollbar.min.js?1716534515"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1716534515"></script>
+    <script src="/js/jquery.sticky.js?1716534515"></script>
+    <script src="/js/featherlight.min.js?1716534515"></script>
+    <script src="/js/highlight.pack.js?1716534515"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1716477378"></script>
-    <script src="/js/learn.js?1716477378"></script>
-    <script src="/js/hugo-learn.js?1716477378"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1716534515"></script>
+    <script src="/js/learn.js?1716534515"></script>
+    <script src="/js/hugo-learn.js?1716534515"></script>
 
-    <link href="/mermaid/mermaid.css?1716477378" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1716477378"></script>
+    <link href="/mermaid/mermaid.css?1716534515" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1716534515"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

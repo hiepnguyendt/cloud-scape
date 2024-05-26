@@ -3,7 +3,7 @@ title : "Setup Environment"
 date :  "`r Sys.Date()`" 
 weight : 2 
 chapter : false
-pre : " <b> 2. </b> "
+pre : " <b> 1.2. </b> "
 ---
 
 To get started, set up the provided workshop application by following the steps:

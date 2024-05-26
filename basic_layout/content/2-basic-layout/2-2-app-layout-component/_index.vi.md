@@ -1,23 +1,22 @@
 ---
-title : "Add the app layout component"
+title : "Thêm app layout"
 date :  "`r Sys.Date()`" 
 weight : 2
 chapter : false
 pre : " <b>2.2.</b> "
 ---
-Let's continue adding the [app layout component](https://cloudscape.design/components/app-layout/). This component provides the basic layout for all types of pages, including collapsible side navigation and a tools panel.
-
-1. Open ```src/pages/home/app.tsx``` in your IDE.
-2. Import the component using ```import AppLayout from '@cloudscape-design/components/app-layout';```.
-3. Add the ```<AppLayout />``` as a sibling next to the ```<TopNavigation />``` component wrapped in a [React fragment](https://reactjs.org/docs/fragments.html).
-4. Set the AppLayout's ```ariaLabels``` properties as described in the [AppLayout API documentation](https://cloudscape.design/components/app-layout/).
-5. The AppLayout component can be used with different headers. It provides property ```headerSelector``` to specify the CSS selector of the header you are using. Setting this property is important to ensure that the AppLayout position doesn't overlap the header.\
-    a. Wrap the ```<TopNavigation />``` component with a ```<div />``` element. Add a id attribute with value top-nav to the wrapping ```<div />``` element.\
-    b. Set the AppLayout's ```headerSelector``` property to a valid css selector ```#top-nav```.
-6. To prevent an overlap, make the TopNavigation sticky. This gets handled inside src/pages/home/styles.css.\
-    a. Add the required import ```import './styles.css';```.\
-    b. Add the necessary styling for the top navigation. Hint: An example of this styling can be found on the bottom of the Top navigation [documentation page](https://cloudscape.design/components/top-navigation/?tabId=api#code-examples).
-This is how ```src/pages/home/app.tsx``` looks like after this step:
+Hãy tiếp tục thêm [app layout component](https://cloudscape.design/comComponents/app-layout/). Thành phần này cung cấp bố cục cơ bản cho tất cả các loại trang, bao gồm điều hướng bên có thể thu gọn và bảng công cụ.
+1. Mở file ```src/pages/home/app.tsx```.
+2. Thêm ```import AppLayout from '@cloudscape-design/components/app-layout';``` vào code.
+3. Thêm ```<AppLayout />``` với tư cách là thành phần bên cạnh thành phần ```<TopNavigation />``` được gói trong [React fragment](https://reactjs.org/docs/fragments.html).
+4. Đặt thuộc tính ```ariaLabels``` của AppLayout như được mô tả trong [API AppLayout docummentation](https://cloudscape.design/comComponents/app-layout/).
+5.  Thành phần AppLayout có thể được sử dụng với các tiêu đề khác nhau. Nó cung cấp thuộc tính ```headerSelector``` để chỉ định bộ chọn CSS của tiêu đề bạn đang sử dụng. Việc đặt thuộc tính này rất quan trọng để đảm bảo rằng vị trí AppLayout không chồng lên tiêu đề.\
+     a. Để bọc component <TopNavigation /> trong một phần tử <div />, bạn có thể làm như sau. Chúng ta thêm một thuộc tính id với giá trị "top-nav" vào phần tử <div> bao quanh component <TopNavigation />.
+     b. Thiết lập thuộc tính ```headerSelector``` của AppLayout sử dụng css seclector ```#top-nav```.
+6. Để tránh trùng lặp, hãy tạo TopNavigation sticky. Việc này được xử lý bên trong ``src/pages/home/styles.css``.\
+    a. Chúng ta cần import file css vào component TopNavigation ```import './styles.css';```.\
+    b. Thêm thiết kế cần thiết cho top navigation. Gợi ý: Bạn có thể tìm thấy ví dụ về kiểu này ở cuối [documentation page](https://cloudscape.design/comComponents/top-navigation/?tabId=api#code-examples).
+    ```src/pages/home/app.tsx``` sẽ như thế này sau bước này:
     ```
     import React from 'react';
     import TopNavigation from '@cloudscape-design/components/top-navigation';
@@ -58,7 +57,7 @@ This is how ```src/pages/home/app.tsx``` looks like after this step:
     }
     ```
 
-This is how ```src/pages/home/styles.css``` looks like after this step:
+ ```src/pages/home/styles.css``` sẽ như thế này sau bước này:
 ```
     #top-nav
     {
@@ -68,9 +67,11 @@ This is how ```src/pages/home/styles.css``` looks like after this step:
     }
 
 ```
-You should now have an excitingly empty page consisting of an empty app layout, top navigation, and no content.
 
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+Bây giờ bạn sẽ có một trang trống bao gồm bố cục ứng dụng trống, top navigation và không có nội dung.
+
+
+{{%expand "{{%expand "Trang sẽ trông như thế nào sau bước này." %}}" %}}
 ![Preparation](/images/5.png?false&width=90pc)
 
 {{% /expand%}}

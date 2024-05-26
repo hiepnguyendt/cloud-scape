@@ -1,13 +1,13 @@
 ---
-title : "Make the table sortable"
+title : "Làm cho bảng có thể sắp xếp"
 date :  "`r Sys.Date()`" 
 weight : 6 
 chapter : false
 pre : " <b>3.5.</b> "
 ---
-You might have noticed the ``sorting`` configuration in the step where we set up the collection hooks. This configuration sets the initial sorting state on the first render. To make the columns sortable, we need to extend the ``columnDefinitions`` by the ``sortingField`` field for each column. The value is used in collection hooks to reorder the items. Provide the name of the property within each item that should be used for sorting by this column.
+Bạn có thể đã nhận thấy cấu hình ``sorting`` trong bước mà chúng tôi thiết lập các hook. Cấu hình này đặt trạng thái sắp xếp ban đầu trong lần hiển thị đầu tiên. Để làm cho các cột có thể sắp xếp, chúng ta cần mở rộng ``columnDefinitions`` bằng trường ``sortingField`` cho mỗi cột. Giá trị được sử dụng trong hook để sắp xếp lại các mục. Cung cấp tên của thuộc tính trong mỗi mục nên được sử dụng để sắp xếp theo cột này.
 
-Here's the extended columnDefinitions definition:
+Đây là columnDefinitions mở rộng:
 
   ```
   const columnDefinitions: TableProps<Flavor>['columnDefinitions'] = [
@@ -76,7 +76,7 @@ To reflect sorting on the table, we need to spread the ``collectionProps`` on th
 
   ```
 
-You can now see sorting on the different columns reflected in the browser.
+Bây giờ bạn có thể thấy việc sắp xếp trên các cột khác nhau được phản ánh trong trình duyệt.
 
 {{%expand "See how src/pages/flavors/components/flavors-table.tsx looks like after this step." %}}
 ```
@@ -175,6 +175,6 @@ export default function VariationTable({ flavors }: VariationTableProps) {
 ```
 {{% /expand%}}
 
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+{{%expand "Xem ảnh chụp màn hình của trang trông như thế nào sau bước này." %}}
 ![Preparation](/images/17.png?false&width=90pc)
 {{% /expand%}}

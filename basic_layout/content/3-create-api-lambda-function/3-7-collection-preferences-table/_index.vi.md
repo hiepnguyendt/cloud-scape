@@ -1,14 +1,13 @@
 ---
-title : "Add collection preferences to table "
+title : "Thêm tùy chọn bộ sưu tập vào bảng "
 date :  "`r Sys.Date()`" 
 weight : 8 
 chapter : false
 pre : " <b>3.7.</b> "
 ---
-With collection preferences, users can manage their display preferences within a collection. In this step, we let the user choose how many items are shown per page. Before adding the code, take a look at the [collection preferences component documentation](https://cloudscape.design/components/collection-preferences/).
+Với tùy chọn tùy chọn bộ sưu tập, người dùng có thể quản lý tùy chọn hiển thị của họ trong thư viện. Trong bước này, chúng tôi cho phép người dùng chọn số lượng mục được hiển thị trên mỗi trang. Trước khi thêm code, hãy xem tài liệu về các thành phần tùy chọn bộ sưu tập (https://cloudscape.design/components/collection-preferences/).
 
-We'll add the ``CollectionPreferences`` component. Set it as a ``preferences`` property value on our flavors ``Table``. Here's the component after we add it to the ``preferences`` property:
-
+Chúng tôi sẽ thêm thành phần ``CollectionPreferences``. Đặt nó dưới dạng giá trị thuộc tính ``preferences`` trên bảng flavor của chúng tôi. Đây là thành phần sau khi chúng tôi thêm nó vào thuộc tính ``preferences``:
   ```
   <CollectionPreferences
     preferences={preferences} // Specifies the current preference values
@@ -31,9 +30,9 @@ We'll add the ``CollectionPreferences`` component. Set it as a ``preferences`` p
 
   ```
 
-  Take a look in your browser. You'll now see the settings icon next to the table pagination. Play around with it by setting different values and see how they get reflected in the UI.
+  Hãy nhìn vào trình duyệt của bạn. Bây giờ bạn sẽ thấy biểu tượng cài đặt bên cạnh trang tính bảng. Thứ nghiệm bằng cách đặt các giá trị khác nhau và xem chúng được phản ánh như thế nào trong giao diện người dùng.
 
-  {{%expand "See how src/pages/flavors/components/flavors-table.tsx looks like after this step." %}}
+  {{%expand "Xem src/pages/flavor/components/flavors-table.tsx trông như thế nào sau bước này." %}}
 ```
 import React, { useState, ReactNode } from 'react';
 import Header from '@cloudscape-design/components/header';
@@ -189,6 +188,6 @@ export default function VariationTable({ flavors }: VariationTableProps) {
 ```
 {{% /expand%}}
 
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+{{%expand "Xem ảnh chụp màn hình của trang trông như thế nào sau bước này." %}}
 ![Preparation](/images/20.png?false&width=90pc)
 {{% /expand%}}

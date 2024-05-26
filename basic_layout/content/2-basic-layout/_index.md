@@ -20,4 +20,4 @@ See how the app looks before and after this step:
 
 |  Before      |   After       |   
 | :-------------: | :-------------: |
-| ![Preparation](/images/3.png?false&width=90pc&height=30pc) | ![Preparation](/images/9.png?false&width=90pc&height=30pc) |   
+| ![Preparation](/images/3.png?false&width=90pc) | ![Preparation](/images/9.png?false&width=90pc) |   

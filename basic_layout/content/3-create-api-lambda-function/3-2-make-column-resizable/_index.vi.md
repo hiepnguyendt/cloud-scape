@@ -5,15 +5,16 @@ weight : 3
 chapter : false
 pre : " <b>3.2.</b> "
 ---
-Let's make the columns resizable. With column resizing, the user can manually resize the column width by dragging the divider on the right of a column header.
 
-Users can also reveal, hide, and adjust the content to the screen area. To do that, add the ``resizableColumns={true}`` property to the <Table /> component;
+Hãy làm cho các cột có thể thay đổi kích cỡ. Với việc thay đổi kích cỡ cột, người dùng có thể thay đổi chiều rộng cột bằng cách kéo con trỏ ở bên phải của tiêu đề cột.
 
-Try out resizing the columns in your browser!
+Người dùng cũng có thể ẩn, hiện và điều chỉnh nội dung theo khu vực màn hình. Để làm điều đó, hãy thêm thuộc tính ``resizableColumns={true}`` vào thành phần <Table />;
 
-This step did not contain any visual changes reflected on the page - the table columns are now interactive.
+Hãy thử thay đổi kích cỡ cột trong trình duyệt của bạn!
 
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+Bước này không chứa bất kỳ thay đổi trực quan nào trên trang - các cột bảng hiện đang tương tác.
+
+{{%expand "Xem ảnh chụp màn hình của trang trông như thế nào sau bước này." %}}
 ![Preparation](/images/14.png?false&width=90pc)
 
 {{% /expand%}}

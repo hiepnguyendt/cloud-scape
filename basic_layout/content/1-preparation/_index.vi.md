@@ -5,55 +5,12 @@ weight : 1
 chapter : false
 pre : " <b> 1. </b> "
 ---
-Trước khi thực hiện nội dung chính của workshop này, chúng ta cần thiết lập lại ứng dụng web bằng AWS SAM.
-1. Tải source code dưới đây
+Trong workshop này, chúng tôi sẽ sử dụng Cloudscape Design System để xây dựng một ứng dụng web đáp ứng và dễ truy cập để quản lý hệ thống điện toán đám mây. Ứng dụng web sẽ tận dụng các thành phần React nguồn mở do Cloudscape cung cấp. Workshop yêu cầu kiến thức về phát triển front-end, React và TypeScript.
 
+Bạn sẽ bắt đầu workshop này với một dự án React TypeScript trống và kết thúc bằng cách xây dựng một ứng dụng cơ bản bằng cách sử dụng các thành phần Cloudscape. Trong quá trình này, bạn sẽ được giới thiệu một số mẫu chính của chúng tôi và các thành phần tương ứng cần thiết để triển khai các mẫu này.
 
+Nếu bạn có bất kỳ vấn đề gì trong quá trình hội thảo, vui lòng liên hệ trực tiếp với chúng tôi. Chúng tôi sẽ cố gắng hết sức để giúp đỡ.
 
-2. Chạy các câu lệnh dưới đây
-    ```
-    sam build
-    sam deploy --guided
-    ```
-
-3. Nhập nội dung như sau:
-    - Stack Name []: `fcj-book-shop`
-    - AWS Region []: `ap-southeast-1`
-    - Confirm changes before deploy [Y/n]: **y**
-    - Allow SAM CLI IAM role creation [Y/n]: **y**
-    - Disable rollback [y/N]: **y**
-    - BooksList may not have authorization defined, Is this okay? [y/N]: **y**
-    - BookCreate may not have authorization defined, Is this okay? [y/N]: **y**
-    - BookDelete may not have authorization defined, Is this okay? [y/N]: **y**
-    - Login may not have authorization defined, Is this okay? [y/N]: **y**
-    - Register may not have authorization defined, Is this okay? [y/N]: **y**
-    - ConfirmUser may not have authorization defined, Is this okay? [y/N]: **y**
-    - Save arguments to configuration file [Y/n]: **y**
-
-4. Mở bảng điều khiển của [AWS APIs Gateway](https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1)
-
-5. Ấn chọn **API Gateway REST API to Lambda**
-![Preparation](/images/1/1.png?false&width=90pc)
-
-6. Ấn chọn **Stage** ở menu phía bên trái
-    - Ấn chọn **staging**
-    - Ghi lại **InvokeURL**
-![Preparation](/images/1/2.png?false&width=90pc)
-
-
-7. Thực hiện câu lệnh dưới đây để tải code **FCJ-Serverless-Workshop** về máy của bạn
-    ```
-    git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
-    ```
-    - Mở tệp **config.js**, thay giá trị của **APP_API_URL** bằng **InvokeURL**
-8. Thực hiện các câu lệnh dưới đây để build project
-    ```
-    cd FCJ-Serverless-Workshop
-    yarn build
-    ```
-9. Chúng ta đã build xong front-end. Tiếp theo thực hiện câu lệnh sau để tải thư mục **build** lên S3 bucket
-    ```
-    aws s3 cp build s3://fcj-book-shop --recursive
-    ```
-
-***Vậy là chúng ta đã tạo lại xong ứng dụng web.***
+#### Workshop Resources
+1. [Cloudscape documentation website](https://cloudscape.design/) 
+2. [Workshop package on GitHub](https://github.com/aws-samples/cloudscape-design-system-workshop) 

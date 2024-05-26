@@ -9,7 +9,10 @@ Adding content to the app layout component is done via the **content** property.
 
 To place your content in the high contrast header, you can use the [content layout component](https://cloudscape.design/components/content-layout/?tabId=playground) . This component provides the basic layout for the header and content of a page. Take a look at the [API documentation and usage guidelines](https://cloudscape.design/components/content-layout/?tabId=playground). You can then add the component to the **AppLayout** content property with dummy data and see how it looks.
 
-{{%expand "See how src/pages/home/app.tsx looks like after this step." %}}
+Việc thêm content vào app layout được thực hiện thông qua thuộc tính **content**. Thử nó bằng cách thêm thuộc tính vào **AppLayout** và thêm nội dung nháp để xem chức năng cơ bản.
+
+Để đặt nội dung của bạn trong tiêu đề độ tương phản cao, bạn có thể sử dụng [content layout component](https://cloudscape.design/components/content-layout/?tabId=playground). Thành phần này cung cấp bố trí cơ bản cho tiêu đề và nội dung của một trang. Hãy xem [Documentation API and usage guidelines](https://cloudscape.design/components/content-layout/?tabId=playground). Sau đó bạn có thể thêm thành phần vào thuộc tính nội dung **AppLayout** với dữ liệu ngớ ngẩn và xem nó trông như thế nào.
+{{%expand "Xem src/pages/home/app.tsx trông như thế nào sau bước này." %}}
 ```
 import React from 'react';
 import TopNavigation from '@cloudscape-design/components/top-navigation';
@@ -63,6 +66,6 @@ export default function App() {
 ```
 {{% /expand%}}
 
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+{{%expand "Xem ảnh chụp màn hình của trang trông như thế nào sau bước này." %}}
 ![Preparation](/images/8.png?false&width=90pc)
 {{% /expand%}}

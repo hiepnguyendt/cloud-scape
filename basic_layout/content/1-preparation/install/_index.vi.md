@@ -1,25 +1,24 @@
 ---
-title : "Install"
+title : "Cài đặt công cụ"
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : false
-pre : " <b> 1. </b> "
+pre : " <b> 1.1. </b> "
 ---
-#### Installs on your Laptop
-
-1. Before we begin, there are a few things you need to have installed on your laptop:
+#### Cài đặt
+1. Trước khi chúng ta bắt đầu, có một số thứ bạn cần phải cài đặt:
     - Git
-    - Node.js 14.2 or higher
-    - npm 7.10 or higher
-    - Have access to your preferred IDE
+    - Node.js 14.2 hoặc mới hơn
+    - npm 7.10 hoặc mới hơn
+    - Có quyền truy cập vào IDE
 
-2. To learn more about the tools, you can visit the following links:
+2. Để tìm hiểu thêm về các công cụ, bạn có thể truy cập các liên kết sau:
     - https://git-scm.com 
     - https://nodejs.org 
     - https://www.npmjs.com 
 
-#### Installs Verification
-If you already have one or several of these dependencies installed, just verify you have the latest version. Here are the versions we tested the workshop instructions with. Any more recent version should work as well.
+#### Xác nhận đã cài đặt
+Nếu bạn đã cài đặt những công cụ này, chỉ cần xác minh rằng bạn có phiên bản mới nhất. Dưới đây là các phiên bản mà chúng tôi đã thử nghiệm theo hướng dẫn workshop. Bất kỳ phiên bản mới hơn nào cũng sẽ hoạt động.
 
 ````
 git --version

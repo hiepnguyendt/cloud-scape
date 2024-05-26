@@ -5,13 +5,13 @@ weight : 5
 chapter : false
 pre : " <b>3.4.</b> "
 ---
-As we've seen when setting up the collection, there are different variables constructed from the ``useCollection`` hook: ``items``, ``filterProps``, ``filteredItemsCount``, ``paginationProps`` and ``collectionProps``. In this step, we make use of ``paginationProps``. We can use the ``paginationProps`` object to spread on the pagination component. Let's do that by adding the ``Pagination`` component as a property to the Table inside ``src/pages/flavors/components/flavors-table.tsx:``
+Như chúng ta đã thấy khi thiết lập, có những biến khác nhau được xây dựng từ ``useCollection`` hook: ``items``, ``filterProps``, ``filteredItemsCount``, ``paginationProps`` và ``collectionProps``. Trong bước này, chúng tôi sử dụng ``paginationProps``. Chúng ta có thể sử dụng đối tượng ``paginationProps`` để phân tán trên thành phần pagination. Hãy làm điều đó bằng cách thêm thành phần ``Pagination`` như một thuộc tính vào bảng bên trong ``src/pages/flavor/components/flavors-table.tsx:``
 
 ```pagination={<Pagination {...paginationProps} />}```
 
-Take a look in your browser. The table view now shows 20 items per page and comes with a pagination. Feel free to play around with the newly added elements and default values.
+Hãy nhìn vào trình duyệt của bạn. Bây giờ dạng xem bảng hiển thị 20 mục mỗi trang và đi kèm với một trang. Thoải mái trải nghiệm với các yếu tố mới được thêm vào và các giá trị mặc định.
 
-{{%expand "See how src/pages/flavors/components/flavors-table.tsx looks like after this step." %}}
+{{%expand "Xem src/pages/flavor/components/flavors-table.tsx trông như thế nào sau bước này." %}}
 ```
 import React, { useState } from 'react';
 import Header from '@cloudscape-design/components/header';
@@ -99,6 +99,6 @@ export default function VariationTable({ flavors }: VariationTableProps) {
 ```
 {{% /expand%}}
 
-{{%expand "See the screenshot of how the page looks like after this step." %}}
+{{%expand "Xem ảnh chụp màn hình của trang trông như thế nào sau bước này." %}}
 ![Preparation](/images/16.png?false&width=90pc)
 {{% /expand%}}
